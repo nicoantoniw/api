@@ -1,10 +1,10 @@
 const express = require('express');
 
-const certificateController = require('../controllers/user');
+const policyController = require('../controllers/policy');
 const auth = require('../middleware/is-auth');
 
 const router = express.Router();
 
-// router.get('/certificate', auth.isCyclist, certificateController.getCertificate);
+router.get('/user', policyController.getUserFromPolicy);
 
 module.exports = router;

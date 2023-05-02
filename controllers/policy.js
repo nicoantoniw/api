@@ -1,18 +1,21 @@
 const User = require('../models/user');
 const Policy = require('../models/policy');
 
-exports.getCertificate = async (req, res, next) => {
+exports.getUserFromPolicy = async (req, res, next) => {
     try {
-        const certificate = await Certificate.findOne({ user: req.userId })
-            .populate('user', { username: 1, _id: 1 });
-
-        if (!certificate) {
-            const error = new Error('No certificate found');
+        const policy = await Policy.findOne({ id: req.query.policyId })
+            .populate('clientId', {
+                name: 1, id: 1, email: 1, role: 1
+            });
+        if (!policy) {
+            const error = new Error('No policy found');
             error.statusCode = 404;
             throw error;
         }
+        console.log(policy);
+        const user = policy.clientId;
         res.status(200).json({
-            certificate
+            user
         });
     } catch (err) {
         if (!err.statusCode) {
