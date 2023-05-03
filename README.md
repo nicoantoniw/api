@@ -11,10 +11,20 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 ```bash
 # Clone this repository
 $ git clone https://github.com/nicoantoniw/api.git
+<<<<<<< HEAD
 # Go into the repository
 $ cd api
 # Install dependencies
 $ npm install
+=======
+
+# Go into the repository
+$ cd api
+
+# Install dependencies
+$ npm install
+
+>>>>>>> 3b8c30264cd065620218330e9fa0696ec5615eda
 # Run the app on localhost:3000
 $ npm start
 ```
