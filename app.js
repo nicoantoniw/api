@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 
+const authRoutes = require('./routes/auth');
 const policyRoutes = require('./routes/policy');
 const userRoutes = require('./routes/user');
 const databaseRoutes = require('./routes/database');
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/policy', policyRoutes);
 app.use('/api/database', databaseRoutes);

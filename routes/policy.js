@@ -5,7 +5,8 @@ const auth = require('../middleware/is-auth');
 
 const router = express.Router();
 
-router.get('/user', policyController.getUserFromPolicy);
-router.get('/policies', policyController.getPoliciesFromUser);
+// auth.isAdmin is the middleware used for authorization
+router.get('/user', auth.isAdmin, policyController.getUserFromPolicy);
+router.get('/policies', auth.isAdmin, policyController.getPoliciesFromUser);
 
 module.exports = router;
