@@ -3,7 +3,7 @@ const Policy = require('../models/policy');
 
 exports.getUserFromPolicy = async (req, res, next) => {
     try {
-        const policy = await Policy.findOne({ id: req.query.policyId })
+        const policy = await Policy.findOne({ id: req.params.policyId })
             .populate('clientId', {
                 name: 1, id: 1, email: 1, role: 1
             });
@@ -26,7 +26,7 @@ exports.getUserFromPolicy = async (req, res, next) => {
 
 exports.getPoliciesFromUser = async (req, res, next) => {
     try {
-        const user = await User.findOne({ id: req.query.userId });
+        const user = await User.findOne({ id: req.params.userId });
         if (!user) {
             const error = new Error('No user found');
             error.statusCode = 404;

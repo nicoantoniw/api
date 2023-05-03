@@ -6,6 +6,6 @@ const auth = require('../middleware/is-auth');
 const router = express.Router();
 
 // auth.isUser is the middleware used for authorization
-router.get('/get', auth.isUser, userController.getUserByParameter);
+router.get('/:parameter', auth.isUser, userController.getUserByParameter);
 
 module.exports = router;
