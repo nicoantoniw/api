@@ -1,8 +1,8 @@
 # HASTEN API
 
-REST API for application where you can log in as an admin or user, get users by id or name and get policies.
-Stack used for this api: Node.js - Express.js - MongoDB.
-3rd party libraries used for this api: axios - jsonwebtoken - mongoose - nodemon
+REST API for application where you can log in as an admin or user, get users by id or name and get policies.  
+Stack used for this api: Node.js - Express.js - MongoDB.  
+3rd party libraries used for this api: axios - jsonwebtoken - mongoose - nodemon.
 
 ![](header.png)
 
