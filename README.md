@@ -35,7 +35,7 @@ $ npm start
 |     `email` | required | string  | The email of the user.                                                                     |
 
 #### /user/:parameter
-* `GET` : Get a user by id or name.
+* `GET` : Get user by id or name.
 
 **Parameters**
 
